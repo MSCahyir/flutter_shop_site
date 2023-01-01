@@ -4,6 +4,9 @@ A new Flutter project.
 
 ## Getting Started
 
+1) To run application "flutter run -t lib/main.dart"
+2) To build an apk "flutter build apk --split-per-abi -t lib/main.dart"
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:

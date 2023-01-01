@@ -79,24 +79,25 @@ class _HomeState extends State<Home> {
               _productInsideTheBasket.isEmpty
                   ? Container()
                   : Positioned(
+                      top: 3.0,
+                      right: 6.0,
                       child: Stack(
-                      children: <Widget>[
-                        const Icon(Icons.brightness_1,
-                            size: 20.0, color: white),
-                        Positioned(
-                            top: 3.0,
-                            right: 6.0,
-                            child: Center(
-                              child: Text(
-                                _productInsideTheBasket.length.toString(),
-                                style: const TextStyle(
-                                    color: black,
-                                    fontSize: 11.0,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            )),
-                      ],
-                    )),
+                        children: <Widget>[
+                          Icon(Icons.brightness_1, size: 20.0, color: white),
+                          Positioned(
+                              top: 3.0,
+                              right: 4.0,
+                              child: Center(
+                                child: Text(
+                                  _productInsideTheBasket.length.toString(),
+                                  style: const TextStyle(
+                                      color: black,
+                                      fontSize: 11.0,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              )),
+                        ],
+                      )),
             ],
           ),
         ],

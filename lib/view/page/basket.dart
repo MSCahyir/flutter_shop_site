@@ -82,31 +82,33 @@ class _BasketState extends State<Basket> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          widget.productInsideTheBasket.isEmpty
-              ? Container(
-                  height: context.height(),
-                  width: context.width(),
-                  child: ListView(children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Center(
-                        child: Container(
-                          padding: const EdgeInsets.all(20),
-                          color: appColor,
-                          child: Text(
-                            textAlign: TextAlign.center,
-                            "SEPETINIZDE ÜRÜN BULUNMAMAKTADIR",
-                            style: boldTextStyle(size: 25, color: black),
-                          ),
-                        ),
+      body: widget.productInsideTheBasket.isEmpty
+          ? Container(
+              height: context.height(),
+              width: context.width(),
+              child: ListView(children: [
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Center(
+                    child: Container(
+                      padding: const EdgeInsets.all(20),
+                      color: appColor,
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        "SEPETINIZDE ÜRÜN BULUNMAMAKTADIR",
+                        style: boldTextStyle(size: 25, color: black),
                       ),
-                    ).expand(),
-                    20.height,
-                  ]),
-                ).expand()
-              : ListView(
+                    ),
+                  ),
+                ).expand(),
+                20.height,
+              ]),
+            ).expand()
+          : Container(
+              height: context.height(),
+              width: context.width(),
+              child: SingleChildScrollView(
+                child: Column(
                   children: [
                     20.height,
                     Text(
@@ -130,27 +132,31 @@ class _BasketState extends State<Basket> {
                                     fit: BoxFit.scaleDown,
                                     "${widget.productInsideTheBasket[index].image}"),
                               ),
-                              Column(
-                                children: [
-                                  Text(
-                                    widget.productInsideTheBasket[index].name!,
-                                    softWrap: true,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.start,
-                                    style: boldTextStyle(),
-                                  ),
-                                  5.height,
-                                  Text(
-                                    "En geç 22 Eylül Perşembe Günü Teslim",
-                                    softWrap: true,
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.start,
-                                    style: secondaryTextStyle(size: 12),
-                                  )
-                                ],
-                              ).expand(),
+                              Container(
+                                width: context.width() * 0.55,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      widget
+                                          .productInsideTheBasket[index].name!,
+                                      softWrap: true,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.start,
+                                      style: boldTextStyle(),
+                                    ),
+                                    5.height,
+                                    Text(
+                                      "En geç 22 Eylül Perşembe Günü Teslim",
+                                      softWrap: true,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.start,
+                                      style: secondaryTextStyle(size: 12),
+                                    )
+                                  ],
+                                ),
+                              ),
                               Column(
                                 children: const [
                                   IconButton(
@@ -167,7 +173,7 @@ class _BasketState extends State<Basket> {
                         );
                       },
                       itemCount: widget.productInsideTheBasket.length,
-                    ).expand(),
+                    ),
                     Container(
                       height: 70,
                       width: context.width(),
@@ -216,9 +222,9 @@ class _BasketState extends State<Basket> {
                       ],
                     )
                   ],
-                ).expand(),
-        ],
-      ),
+                ),
+              ),
+            ),
     );
   }
 }

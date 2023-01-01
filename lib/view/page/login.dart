@@ -23,8 +23,12 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey[50],
+        elevation: 0,
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Container(
           height: context.height(),
           width: context.width(),
@@ -99,6 +103,8 @@ class _LoginState extends State<Login> {
                                 focus: passWordFocusNode,
                                 maxLines: 1,
                                 textFieldType: TextFieldType.PASSWORD,
+                                isPassword: true,
+                                enableSuggestions: false,
                                 decoration: inputDecoration(),
                               ).expand(),
                             ],
